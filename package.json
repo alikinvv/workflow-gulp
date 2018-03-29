@@ -1,0 +1,24 @@
+{
+  "name": "workflow-gulp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "github:gulpjs/gulp#4.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alikinvv/workflow-gulp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alikinvv/workflow-gulp/issues"
+  },
+  "homepage": "https://github.com/alikinvv/workflow-gulp#readme"
+}
