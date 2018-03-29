@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+@import 'mixins';
+
+/*** MIXINS USAGE ***
+
+	@include font-face("fontName", "../fonts/fontPath/fontName", normal); 
+
+	@include xs(12);
+	@include sm(12);
+	@include md(12);
+	@include lg(12);
+
+	@include r(768);
+	@include rmin(768);
+
+	@include trans / trans($what $dur $easing);
+	@include cover;
+
+	@include centerX / centerXa
+	@include centerY / centerYa
+
+***/
+
+body {
+	background-color: #fff;
+}
+
+body {
+	color: #00f;
+	display: flex;
+}
