@@ -50,6 +50,11 @@ gulp.task('img:dev',function() {
         .pipe(gulp.dest('build/img'))
 });
 
+gulp.task('icons:build',function() {
+    return gulp.src('src/img/**/*.svg')
+        .pipe(gulp.dest('build/img'))
+});
+
 gulp.task('img:build',function() {
     return gulp.src('src/img/**/*.{png,jpg}')
         .pipe(gp.tinypng('4jyAh2TumYspKSm9bJ8td6WmPOA7MzjG'))
@@ -96,4 +101,4 @@ gulp.task('watch',function() {
 });
 
 gulp.task('default',gulp.series(gulp.parallel('html','css','img:dev'), gulp.parallel('watch','server')));
-gulp.task('build',gulp.series(gulp.parallel('html','css','css:build','js:build','img:build','fonts:build','svg')));
+gulp.task('build',gulp.series(gulp.parallel('html','css','css:build','js:build','fonts:build','img:build','svg','icons:build')));
