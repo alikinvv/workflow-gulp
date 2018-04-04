@@ -48,6 +48,7 @@ gulp.task('js:dev', function() {
         }))
         .pipe(browserSync.reload({
             stream: true
+        }))
         .pipe(gulp.dest('build/js'));
 });
 
