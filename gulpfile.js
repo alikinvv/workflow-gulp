@@ -109,4 +109,4 @@ gulp.task('watch',function() {
 });
 
 gulp.task('default',gulp.series(gulp.parallel('html','css','js:dev','img:dev'), gulp.parallel('watch','server')));
-gulp.task('build',gulp.series(gulp.parallel('html','css','css:build','js:build','img:build','img:build','fonts:build','svg')));
+gulp.task('build',gulp.series(gulp.parallel('html','css','css:build','js:build','img:build','fonts:build','svg')));
