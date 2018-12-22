@@ -1,10 +1,9 @@
-@charset "UTF-8";
-
+@charset 'UTF-8';
 @import 'mixins';
 
 /*** MIXINS USAGE ***
 
-	@include font-face("fontName", "../fonts/fontPath/fontName", normal); 
+	@include font-face('fontName', '../fonts/fontPath/fontName', normal); 
 
 	@include xs(12);
 	@include sm(12);
