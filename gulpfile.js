@@ -2,7 +2,8 @@
 
 var gulp = require('gulp'),
     gp = require('gulp-load-plugins')(),
-    browserSync = require('browser-sync').create();
+    browserSync = require('browser-sync').create(),
+    cleanCSS = require('gulp-clean-css');
 
 gulp.task('html', function() {
     return gulp.src('src/*.html')
@@ -23,8 +24,11 @@ gulp.task('css', function() {
             browsers: ['last 10 versions'],
             cascade: false
         }))
-        .pipe(gp.csso())
         .pipe(gp.sourcemaps.write())
+        .pipe(cleanCSS({debug: true}, (details) => {
+            console.log(`${details.name}: ${details.stats.originalSize}`);
+            console.log(`${details.name}: ${details.stats.minifiedSize}`);
+        }))
         .pipe(gulp.dest('build/css'))
         .on("error", gp.notify.onError({
             message: "Error: <%= error.message %>",
@@ -109,4 +113,4 @@ gulp.task('watch',function() {
 });
 
 gulp.task('default',gulp.series(gulp.parallel('html','css','js:dev','img:dev'), gulp.parallel('watch','server')));
-gulp.task('build',gulp.series(gulp.parallel('html','css','css:build','js:build','img:build','fonts:build','svg')));
+gulp.task('build',gulp.series(gulp.parallel('html','css','css:build', 'js:build','img:build','fonts:build','svg')));
