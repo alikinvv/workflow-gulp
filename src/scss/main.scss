@@ -1,6 +1,8 @@
 @charset 'UTF-8';
 @import 'mixins';
 
+$trans: all .2s ease-in-out;
+
 // @include font-face('fontName', '../fonts/fontPath/fontName', normal); 
 
 .icon {
@@ -27,4 +29,29 @@ input,
 textarea,
 button:focus {
 	outline: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.btn {
+	display: inline-block;
+	transition: $trans;
+	text-decoration: none;
+	border: 0;
+	cursor: pointer;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.container {
+	@include r() {
+		padding: 0 20px;
+	}
+
+	margin: 0 auto;
 }
