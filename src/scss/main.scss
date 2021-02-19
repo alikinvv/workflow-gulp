@@ -5,6 +5,10 @@ $trans: all .2s ease-in-out;
 
 // @include font-face('fontName', '../fonts/fontPath/fontName', normal); 
 
+body {
+	
+}
+
 .icon {
 	display: inline-block;
 	width: 2em;
@@ -50,9 +54,9 @@ a {
 }
 
 .container {
-	@include r() {
-		padding: 0 20px;
-	}
+	// @include r() {
+	// 	padding: 0 20px;
+	// }
 
 	margin: 0 auto;
 }
