@@ -5,6 +5,10 @@ $trans: all .2s ease-in-out;
 
 // @include font-face('fontName', '../fonts/fontPath/fontName', normal); 
 
+::selection {
+	// background: cyan;
+}
+
 body {
 	
 }
