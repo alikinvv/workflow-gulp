@@ -3,6 +3,7 @@
 var gulp = require('gulp'),
     gp = require('gulp-load-plugins')(),
     browserSync = require('browser-sync').create(),
+    babel = require('gulp-babel'),
     cleanCSS = require('gulp-clean-css');
 
 gulp.task('html', function() {
@@ -53,6 +54,7 @@ gulp.task('js:dev', function() {
         .pipe(browserSync.reload({
             stream: true
         }))
+        .pipe(babel({presets: ['@babel/preset-env'] })) 
         .pipe(gulp.dest('build/js'));
 });
 
