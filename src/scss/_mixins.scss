@@ -81,3 +81,86 @@
     src: $src;
   }
 }
+
+@mixin fcn {
+  display: flex;
+  align-items: center;
+}
+
+@mixin fsn {
+  display: flex;
+  align-items: flex-start;
+}
+
+@mixin fen {
+  display: flex;
+  align-items: flex-end;
+}
+
+@mixin fnc {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin fns {
+  display: flex;
+  justify-content: flex-start;
+}
+
+@mixin fne {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@mixin fnsb {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin fcc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin fsc {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+@mixin fec {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+@mixin fcs {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@mixin fce {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+@mixin fcsb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin fssb {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+@mixin fesb {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
