@@ -57,9 +57,7 @@ a {
 	}
 
 	&.center {
-		position: relative;
-		left: 50%;
-		transform: translateX(-50%);
+		@include centerX;
 	}
 
 	&.mobile {
