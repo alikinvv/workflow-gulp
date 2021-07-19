@@ -147,6 +147,12 @@
   justify-content: flex-end;
 }
 
+@mixin fse {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
 @mixin fcsb {
   display: flex;
   align-items: center;
