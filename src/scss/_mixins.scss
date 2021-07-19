@@ -170,3 +170,9 @@
   align-items: flex-end;
   justify-content: space-between;
 }
+
+@mixin fes {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
