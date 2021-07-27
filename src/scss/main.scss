@@ -15,15 +15,15 @@ body {
 	color: #000;
 }
 
+* {
+	box-sizing: border-box;
+}
+
 .icon {
 	display: inline-block;
 	width: 2em;
 	height: 2em;
 	font-size: 30px;
-}
-
-* {
-	box-sizing: border-box;
 }
 
 h1,
