@@ -18,9 +18,9 @@
   margin-top: 0;
 }
 
-@mixin flexitem($width, $margin) {
+@mixin flexitem($width, $margin, $bottom: $margin) {
   width: calc(#{$width} - #{$margin});
-  margin: 0 ($margin / 2) $margin;
+  margin: 0 ($margin / 2) $bottom;
 }
 
 // set cover
