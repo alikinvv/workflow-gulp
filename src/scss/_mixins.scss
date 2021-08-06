@@ -14,13 +14,13 @@
 @mixin flexlist($margin) {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 ($margin / 2 * -1) ($margin * -1);
+  margin: 0 ($margin * -1) ($margin * -1);
   margin-top: 0;
 }
 
 @mixin flexitem($width, $margin, $bottom: $margin) {
-  width: calc(#{$width} - #{$margin});
-  margin: 0 ($margin / 2) $bottom;
+  width: calc(#{$width} - #{$margin * 2});
+  margin: 0 $margin $bottom;
 }
 
 // set cover
