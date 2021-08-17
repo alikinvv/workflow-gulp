@@ -99,6 +99,13 @@ gulp.task('svg',function() {
             }
         }))
         .pipe(gp.replace('&gt;','>'))
+        .pipe(gp.svgSprite({
+            mode: {
+				symbol: {
+					sprite: "../sprite.svg"
+                }
+            }
+        }))
         .pipe(gulp.dest('build/img'))
 });
 
