@@ -42,6 +42,17 @@ gulp.task('css', function() {
 
 gulp.task('css:build',function() {
     return gulp.src('src/scss/**/*.css')
+    .pipe(gp.sourcemaps.init())
+        .pipe(gp.sass().on('error', gp.sass.logError))
+        .pipe(gp.autoprefixer({
+            browsers: ['last 10 versions'],
+            cascade: false
+        }))
+        .pipe(gp.sourcemaps.write())
+        .pipe(cleanCSS({debug: true}, (details) => {
+            console.log(`${details.name}: ${details.stats.originalSize}`);
+            console.log(`${details.name}: ${details.stats.minifiedSize}`);
+        }))
         .pipe(gulp.dest('build/css'))
 });
 
@@ -54,12 +65,17 @@ gulp.task('js:dev', function() {
         .pipe(browserSync.reload({
             stream: true
         }))
-        .pipe(babel({presets: ['@babel/preset-env'] })) 
+        .pipe(babel({presets: ['@babel/preset-env'] }))
         .pipe(gulp.dest('build/js'));
 });
 
 gulp.task('js:build',function() {
     return gulp.src('src/js/**/*')
+        .on("error", gp.notify.onError({
+            message: "Error: <%= error.message %>",
+            title: "CSS"
+        }))
+        .pipe(babel({presets: ['@babel/preset-env'] }))
         .pipe(gulp.dest('build/js'))
 });
 
@@ -82,15 +98,7 @@ gulp.task('svg',function() {
                 pretty: true
             }
         }))
-        
         .pipe(gp.replace('&gt;','>'))
-        .pipe(gp.svgSprite({
-            mode: {
-				symbol: {
-					sprite: "../sprite.svg"
-                }
-            }
-        }))
         .pipe(gulp.dest('build/img'))
 });
 
@@ -117,3 +125,4 @@ gulp.task('watch',function() {
 
 gulp.task('default',gulp.series(gulp.parallel('html','css','js:dev','img:dev'), gulp.parallel('watch','server')));
 gulp.task('build',gulp.series(gulp.parallel('html','css','css:build', 'js:build','img:build','fonts:build','svg')));
+gulp.task('build:img',gulp.series(gulp.parallel('html','css','css:build', 'js:build')));
