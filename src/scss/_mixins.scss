@@ -183,3 +183,9 @@
   align-items: flex-end;
   justify-content: flex-start;
 }
+
+@mixin ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
