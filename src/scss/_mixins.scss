@@ -1,127 +1,127 @@
 // set media width
 @mixin r($width) {
-  @media only screen and (max-width: $width + "px") {
-    @content
-  }
+    @media only screen and (max-width: $width + 'px') {
+        @content;
+    }
 }
 
 @mixin rmin($width) {
-  @media only screen and (min-width: $width + "px") {
-    @content
-  }
+    @media only screen and (min-width: $width + 'px') {
+        @content;
+    }
 }
 
 @mixin flexlist($margin) {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 ($margin * -1) ($margin * -1);
-  margin-top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 ($margin * -1) ($margin * -1);
+    margin-top: 0;
 }
 
 @mixin flexitem($width, $margin, $bottom: $margin) {
-  width: calc(#{$width} - #{$margin * 2});
-  margin: 0 $margin $bottom;
+    width: calc(#{$width} - #{$margin * 2});
+    margin: 0 $margin $bottom;
 }
 
 // set cover
 @mixin cover {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 // centering
 @mixin center {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 @mixin centerX {
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 @mixin centerY {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 @mixin centerXa {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 @mixin centerYa {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 @mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff ttf svg) {
-  $src: null;
+    $src: null;
 
-  $extmods: (
-    eot: "?",
-    svg: "#" + str-replace($name, " ", "_")
-  );
+    $extmods: (
+        eot: '?',
+        svg: '#' + str-replace($name, ' ', '_'),
+    );
 
-  $formats: (
-    otf: "opentype",
-    ttf: "truetype"
-  );
+    $formats: (
+        otf: 'opentype',
+        ttf: 'truetype',
+    );
 
-  @each $ext in $exts {
-    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
-    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
-    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
-  }
+    @each $ext in $exts {
+        $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+        $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+        $src: append($src, url(quote($path + '.' + $extmod)) format(quote($format)), comma);
+    }
 
-  @font-face {
-    font-family: quote($name);
-    font-style: $style;
-    font-weight: $weight;
-    src: $src;
-  }
+    @font-face {
+        font-family: quote($name);
+        font-style: $style;
+        font-weight: $weight;
+        src: $src;
+    }
 }
 
 @mixin fcn {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 @mixin fsn {
-  display: flex;
-  align-items: flex-start;
+    display: flex;
+    align-items: flex-start;
 }
 
 @mixin fen {
-  display: flex;
-  align-items: flex-end;
+    display: flex;
+    align-items: flex-end;
 }
 
 @mixin fnc {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 @mixin fns {
-  display: flex;
-  justify-content: flex-start;
+    display: flex;
+    justify-content: flex-start;
 }
 
 @mixin fne {
-  display: flex;
-  justify-content: flex-end;
+    display: flex;
+    justify-content: flex-end;
 }
 
 @mixin fnsb {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 @mixin fcc {
@@ -131,61 +131,61 @@
 }
 
 @mixin fsc {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 @mixin fec {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 }
 
 @mixin fcs {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 @mixin fce {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 @mixin fse {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
 }
 
 @mixin fcsb {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 @mixin fssb {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 @mixin fesb {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
 }
 
 @mixin fes {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
 }
 
 @mixin ellipsis {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
