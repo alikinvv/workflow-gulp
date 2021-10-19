@@ -125,13 +125,6 @@ gulp.task('svg', function () {
     return gulp
         .src('src/img/**/*.svg')
         .pipe(gulp.dest('build/img'))
-        .pipe(
-            gp.svgmin({
-                js2svg: {
-                    pretty: true,
-                },
-            })
-        )
         .pipe(gp.replace('&gt;', '>'))
         .pipe(
             gp.svgSprite({
