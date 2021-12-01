@@ -189,3 +189,14 @@
     white-space: nowrap;
     overflow: hidden;
 }
+
+// .hiresBackground(@url, @ext: "png", @backgroundSize: contain, @backgroundPosition: center, @backgroundRepeat: no-repeat) {
+// 	background-image: url("/theme/img/@{url}.@{ext}");
+// 	background-repeat: @backgroundRepeat;
+// 	background-position: @backgroundPosition;
+// 	background-size: @backgroundSize;
+
+// 	@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2ppx), only screen and (min-device-pixel-ratio: 2), only screen and (min-width: 980px) {
+// 		background-image: url("/theme/img/@{url}-x2.@{ext}");
+// 	}
+// }
