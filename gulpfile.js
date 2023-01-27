@@ -5,7 +5,8 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
     babel = require('gulp-babel'),
     csso = require('gulp-csso'),
-    cleanCSS = require('gulp-clean-css');
+    cleanCSS = require('gulp-clean-css'),
+    sass = require('gulp-sass')(require('sass'));
 
 gulp.task('html', function () {
     return gulp
@@ -25,7 +26,7 @@ gulp.task('html', function () {
 gulp.task('css', function () {
     return gulp
         .src('src/scss/**/*.scss')
-        .pipe(gp.sass().on('error', gp.sass.logError))
+        .pipe(sass().on('error', sass.logError))
         .pipe(
             cleanCSS({ debug: true }, (details) => {
                 console.log(`${details.name}: ${details.stats.originalSize}`);
@@ -51,7 +52,7 @@ gulp.task('css:build', function () {
     return gulp
         .src('src/scss/**/*.scss')
         .pipe(gp.sourcemaps.init())
-        .pipe(gp.sass().on('error', gp.sass.logError))
+        .pipe(sass().on('error', sass.logError))
         .pipe(
             gp.autoprefixer({
                 overrideBrowserslist: ['last 2 versions'],
